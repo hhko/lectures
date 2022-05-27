@@ -160,5 +160,5 @@ http://localhost:5279/swagger
 - API 문서 웹페이지를 열기 위해 `dockerServerReadyAction`을 추가한다.
 
 ## TODO
-- [ ] Docker 기반일 때 로그가 출력되지 않는다.
-- [ ] Dockerfile 이해하기
+- [ ] Docker 기반 프로세스의 로그가 출력되지 않는다 : 개선 방법?
+- [ ] 기본으로 생성하기는 Dockerfile 이해하기
