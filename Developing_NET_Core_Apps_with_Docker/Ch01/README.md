@@ -1,20 +1,12 @@
 # Building and Running .NET Apps in Containers
-## 목표
+## 목차
+- Web API 솔루션 구성하기
 - Windows Host에서 WebAPI을 위한 디버깅 설정하기
   - 디버깅을 위한 Configuration 구성하기 : `Add Configuration...`
   - WebAPI 웹 페이지 열기 : `launch.json`의 `launchBrowser`
 - Linux Docker에서 WebAPI을 위한 디버깅 설정하기
   - Linux Docker 환경 구성하기 : `> Docker: Add Docker Files to Workspace...`
   - WebAPI 웹 페이지 열기 : `launch.json`의 `dockerServerReadyAction`
-
-## 목차
-- Windows Host
-  - 솔루션 생성하기
-  - Windows Host 디버깅 기본 환경 구축하기
-  - Windows Host 디버깅 때 API 웹 페이지 열기
-- Linux Docker
-  - Linux Docker 디버깅 환경 구축하기
-  - Linux Docker 디버깅 때 API 웹 페이지 열기
 
 <br/>
 
