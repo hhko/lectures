@@ -4,11 +4,11 @@
 - [ ] [Developing NET Core Apps with Docker](./Developing_NET_Core_Apps_with_Docker/)
 
 ## 개발 환경
-- WSL2
+- [WSL2](https://docs.microsoft.com/ko-kr/windows/wsl/install)
 - [Docker Desktop on Windows](https://docs.docker.com/desktop/windows/install/)
-- Git
-- .NET SDK
-- Visual Studio Code
+- [Git](https://git-scm.com/)
+- [.NET SDK](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks)
+- [Visual Studio Code](https://code.visualstudio.com/)
 - Visual Studio Code 확장 도구
   - [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) : C# 언어 도우미
   - [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) : 도커 확장 도구
