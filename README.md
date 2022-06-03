@@ -5,8 +5,8 @@
 - [ ] [Dapr 1 Fundamentals](./Dapr_1_Fundamentals)
 
 ## 개발 환경
-- [WSL2](https://docs.microsoft.com/ko-kr/windows/wsl/install) : Windows 운영체제에서 Linux을 운영하기 위한 Windows 하위 시스템(`Windows Subsystem for Linux`)
 - [Docker Desktop on Windows](https://docs.docker.com/desktop/windows/install/) : Windows 운영체제를 위한 도커
+- [WSL2](https://docs.microsoft.com/ko-kr/windows/wsl/install) : Linux을 운영하기 위한 Windows 하위 시스템(`Windows Subsystem for Linux`)
 - [Git](https://git-scm.com/) : 형상관리를 위한 도구
 - [.NET SDK](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks) : C# 언어 개발을 위한 SDK(`Software Development Kit`)
 - [Visual Studio Code](https://code.visualstudio.com/) : 개발을 위한 IDE(`Integrated Development Environment`)
