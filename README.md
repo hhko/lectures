@@ -2,6 +2,7 @@
 
 ## 목록
 - [ ] [Developing NET Core Apps with Docker](./Developing_NET_Core_Apps_with_Docker/)
+- [ ] [Dapr 1 Fundamentals](./Dapr_1_Fundamentals)
 
 ## 개발 환경
 - WSL2
