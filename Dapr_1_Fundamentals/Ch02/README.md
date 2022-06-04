@@ -3,13 +3,13 @@
 ## 목차
 - 배경
   - 목표
-- 예제
+- CLI 예제
   - Sidecar만 실행하기 : daprd 프로세스 실행
   - Sidecar와 통신하기 : 데이터 생성 및 조회
   - Sidecar의 데이터 확인하기 : Redis 컨테이너 데이터 조회
   - Sidecar의 네트워크 포트 확인하기 : daprd 프로세스의 네트워크 포트
 - dapr run 플래그
-- darp components 구성
+- dapr components 구성
 
 
 ## 목표
@@ -20,7 +20,7 @@
   - 전역 Sidecar component 정보 : `%USERPROFILE%\.dapr\components\`
 
 
-## 예제
+## CLI 예제
 ### Sidecar만 실행하기 : daprd 프로세스 실행
 ```shell
 dapr run --app-id hello --dapr-http-port 3500
@@ -97,7 +97,7 @@ dapr run --app-id myapp --app-port 3000 --app-protocol grpc -- dotnet run
   -H, --dapr-http-port int  : The HTTP port for Dapr to listen on (default -1), `DAPR_HTTP_PORT`
 ```
 
-## darp components 구성
+## dapr components 구성
 - components 구성 정보 : 
   - dapr Runtime(sidecar)는 기본적으로 `%USERPROFILE%\.dapr\components\` 폴더에 정의된 components 정보를 사용한다.
   - state component 정보는 `%USERPROFILE%\.dapr\components\statestore.yaml`에 Redis을 기본 값으로 설정되어 있다.
