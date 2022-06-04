@@ -1,9 +1,8 @@
 # 1장. Getting Started with Dapr
 
 ## 목차
-- 배경
-  - 목표
-  - Dapr란
+- 목표
+- Dapr란
 - Self-Hosted Windows Dapr 설치
   - Windows Dapr 사전 준비
   - Self-Hosted Windows Dapr CLI 설치
@@ -12,14 +11,15 @@
   - Self-Hosted Windows Dapr CLI 제거
 - 참고 자료
 
-## 배경
-### 목표
+
+## 목표
 - Distributed Application 개발을 위한 Dapr을 이해한다.
   - 아키텍처 :  Sidecar Architecture
   - 구성 : Runtime, CLI
 - Self-Hosted Windows Dapr을 설치한다.
 
-### Dapr란
+
+## Dapr란
 - Dapr(`D`istributed `Ap`plication `R`untime)는 Distributed Application 개발을 위해 Sidecar Architecture으로 Runtime을 제공한다.  
   Runtime은 컨테이너 기반으로 Self-Hosted와 Kubernetes 2개 환경을 제공한다.  
   Runtime을 관리하기 위한 CLI(Command-line interface)을 제공한다.
@@ -31,7 +31,6 @@
 ## Self-Hosted Windows Dapr 설치
 ### Self-Hosted Windows Dapr 설치 준비
 - Docker Desktop
-
 
 ### Self-Hosted Windows Dapr CLI 설치
 #### CLI 설치
@@ -53,7 +52,6 @@ $script=iwr -useb https://raw.githubusercontent.com/dapr/cli/master/install/inst
 dapr -v
 dapr
 ```
-
 
 ### Self-Hosted Windows Dapr Runtime 설치
 #### Runtime 설치
@@ -81,7 +79,6 @@ dapr init
 ```
 ![](2022-06-04-15-57-11.png)
 
-
 #### Runtime 설치 검증
 ```shell
 # 버전 확인
@@ -96,7 +93,6 @@ docker image ls
 ```
 ![](2022-06-04-16-01-34.png)
 ![](2022-06-04-18-21-08.png)
-
 
 ### Self-Hosted Windows Dapr Runtime 제거
 ```shell

@@ -17,6 +17,7 @@
     - Remote - SSH
     - Remote - WSL
     - Remote - Containers
+  - [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
   - [YAML](https://docs.docker.com/desktop/windows/install/) : YAML 파일 도우미
   - [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) : 편집기에서 오타 표시하기
   - [Trailing Spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces) : 편집기에서 공백 표시하기
