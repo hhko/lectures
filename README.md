@@ -10,16 +10,17 @@
 - [Git](https://git-scm.com/) : 형상관리를 위한 도구
 - [.NET SDK](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks) : C# 언어 개발을 위한 SDK(`Software Development Kit`)
 - [Visual Studio Code](https://code.visualstudio.com/) : 개발을 위한 IDE(`Integrated Development Environment`)
-- Visual Studio Code 확장 도구
+- Visual Studio Code **개발** 확장 도구
   - [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) : C# 언어 개발을 위한 도우미
   - [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) : 도커 개발을 위한 도우미
   - [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) : 원격 개발을 위한 도우미
     - Remote - SSH
     - Remote - WSL
     - Remote - Containers
-  - [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) : HTTP API 호출 도우미
-  - [YAML](https://docs.docker.com/desktop/windows/install/) : YAML 파일 도우미
   - [Dapr](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-dapr) : Dapr Runtime 도우미
+  - [YAML](https://docs.docker.com/desktop/windows/install/) : YAML 파일 도우미
+  - [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) : HTTP API 호출 도우미
+- Visual Studio Code **편집** 확장 도구
   - [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) : 편집기에서 오타 표시하기
   - [Trailing Spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces) : 편집기에서 공백 표시하기
   - [vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons) : `Explorer`의 폴더 밒 파일 아이콘을 변경하기
