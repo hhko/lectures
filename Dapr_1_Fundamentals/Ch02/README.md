@@ -67,7 +67,9 @@ exit
 ### Sidecar의 네트워크 포트 확인하기 : daprd 프로세스의 네트워크 포트
 ```shell
 # PowerShell
-netstat -ano | findstr 53323
+# 3500 포트 찾기
+netstat -ano | findstr 3500
+# 17088 PID 프로세스 이름 찾기
 tasklist /FI "PID eq 17088"
 
 # netstat 옵션
