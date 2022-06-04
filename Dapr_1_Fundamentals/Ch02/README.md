@@ -1,8 +1,7 @@
 # 2장. Implementing State Management
 
 ## 목차
-- 배경
-  - 목표
+- 목표
 - CLI 예제
   - Sidecar만 실행하기 : daprd 프로세스 실행
   - Sidecar와 통신하기 : 데이터 생성 및 조회
@@ -10,6 +9,8 @@
   - Sidecar의 네트워크 포트 확인하기 : daprd 프로세스의 네트워크 포트
 - dapr run 플래그
 - dapr components 구성
+- Console State 예제
+- ASP.NET Core State 예제
 
 
 ## 목표
