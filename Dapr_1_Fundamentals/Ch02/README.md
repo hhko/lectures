@@ -139,3 +139,4 @@ spec:
 ## TODO
 - [ ] https://hhko.github.io/learned/dapr/helloworld/state/state-csharp/
 - [ ] https://github.com/markheath/globoticket-dapr
+- [ ] PostgreSQL Insert 예제
