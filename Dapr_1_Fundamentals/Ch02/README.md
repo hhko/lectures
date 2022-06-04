@@ -4,7 +4,7 @@
 - 목표
 - CLI 예제
   - Sidecar만 실행하기 : daprd 프로세스 실행
-  - Sidecar와 통신하기 : 데이터 생성 및 조회
+  - Sidecar와 통신하기 : 영속성 데이터 생성 및 조회
   - Sidecar의 데이터 확인하기 : Redis 컨테이너 데이터 조회
   - Sidecar의 네트워크 포트 확인하기 : daprd 프로세스의 네트워크 포트
 - dapr run 플래그
@@ -30,7 +30,7 @@ dapr run --app-id hello --dapr-http-port 3500
 - application id : `hello`
 - sidecar http port : `3500`
 
-### Sidecar와 통신하기 : 데이터 생성 및 조회
+### Sidecar와 통신하기 : 영속성 데이터 생성 및 조회
 ```shell
 # 데이터 생성
 POST http://localhost:3500/v1.0/state/statestore
