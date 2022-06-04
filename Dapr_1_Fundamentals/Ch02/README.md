@@ -134,3 +134,7 @@ spec:
 
 ## 참고 자료
 - [Detailed information on the Redis state store component](https://docs.dapr.io/reference/components-reference/supported-state-stores/setup-redis/)
+
+## TODO
+- [ ] https://hhko.github.io/learned/dapr/helloworld/state/state-csharp/
+- [ ] https://github.com/markheath/globoticket-dapr
