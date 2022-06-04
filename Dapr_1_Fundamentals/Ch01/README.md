@@ -1,15 +1,25 @@
-# Getting Started with Dapr
+# 1장. Getting Started with Dapr
 
 ## 목차
-- Dapr란
-- Windows Dapr 사전 준비
-- Self-Hosted Windows Dapr CLI 설치
-- Self-Hosted Windows Dapr Runtime 설치
-- Self-Hosted Windows Dapr Runtime 제거
-- Self-Hosted Windows Dapr CLI 제거
+- 배경
+  - 목표
+  - Dapr란
+- Self-Hosted Windows Dapr 설치
+  - Windows Dapr 사전 준비
+  - Self-Hosted Windows Dapr CLI 설치
+  - Self-Hosted Windows Dapr Runtime 설치
+  - Self-Hosted Windows Dapr Runtime 제거
+  - Self-Hosted Windows Dapr CLI 제거
+- 참고 자료
 
+## 배경
+### 목표
+- Distributed Application 개발을 위한 Dapr을 이해한다.
+  - 아키텍처 :  Sidecar Architecture
+  - 구성 : Runtime, CLI
+- Self-Hosted Windows Dapr을 설치한다.
 
-## Dapr란
+### Dapr란
 - Dapr(`D`istributed `Ap`plication `R`untime)는 Distributed Application 개발을 위해 Sidecar Architecture으로 Runtime을 제공한다.  
   Runtime은 컨테이너 기반으로 Self-Hosted와 Kubernetes 2개 환경을 제공한다.  
   Runtime을 관리하기 위한 CLI(Command-line interface)을 제공한다.
@@ -18,12 +28,13 @@
   ![](2022-06-04-19-08-17.png)
 
 
-## Self-Hosted Windows Dapr 설치 준비
+## Self-Hosted Windows Dapr 설치
+### Self-Hosted Windows Dapr 설치 준비
 - Docker Desktop
 
 
-## Self-Hosted Windows Dapr CLI 설치
-### CLI 설치
+### Self-Hosted Windows Dapr CLI 설치
+#### CLI 설치
 ```shell
 # - 관리자일 때
 powershell -Command "iwr -useb https://raw.githubusercontent.com/dapr/cli/master/install/install.ps1 | iex"
@@ -36,7 +47,7 @@ powershell -Command "iwr -useb https://raw.githubusercontent.com/dapr/cli/master
 $script=iwr -useb https://raw.githubusercontent.com/dapr/cli/master/install/install.ps1; $block=[ScriptBlock]::Create($script); invoke-command -ScriptBlock $block -ArgumentList "", "$HOME/dapr"
 ```
 
-### CLI 설치 검증
+#### CLI 설치 검증
 ```shell
 # 새 Prompt 창 열기
 dapr -v
@@ -44,21 +55,34 @@ dapr
 ```
 
 
-## Self-Hosted Windows Dapr Runtime 설치
-### Runtime 설치
+### Self-Hosted Windows Dapr Runtime 설치
+#### Runtime 설치
 ```shell
 dapr init
+# - 최신 Runtime 버전 설치
+# dapr init
 # - 특정 Runtime 버전 설치
 # dapr init --runtime-version 1.0.0
-# - 특정 경로 설치
+# - 특정 경로에 Runtime 설치
 # dapr init --from-dir .
-# - 특정 도커 네트워크 설치
+# - 특정 도커 네트워크로 Runtime 설치
 # docker network create dapr-network
 # dapr init --network dapr-network
+
+# $env:USERPROFILE\.dapr\
+#   bin\
+#     daprd.exe
+#     dashboard.exe
+#     ...
+#   components\
+#     pubsub.yaml
+#     statestore.yaml
+#
 ```
 ![](2022-06-04-15-57-11.png)
 
-### Runtime 설치 검증
+
+#### Runtime 설치 검증
 ```shell
 # 버전 확인
 dapr -v
@@ -74,7 +98,7 @@ docker image ls
 ![](2022-06-04-18-21-08.png)
 
 
-## Self-Hosted Windows Dapr Runtime 제거
+### Self-Hosted Windows Dapr Runtime 제거
 ```shell
 # --all : Remove .dapr directory, Redis, Placement and Zipkin containers on local machine, and CRDs on a Kubernetes cluster
 #   - $env:USERPROFILE\.dapr 폴더 삭제됨
@@ -89,12 +113,12 @@ dapr uninstall --all
 ```
 ![](2022-06-04-18-25-26.png)
 
-## Powershell
-```shell
-Set-ExecutionPolicy RemoteSigned -scope CurrentUser
-```
 
 ## 참고 자료
 - [Install the Dapr CLI](https://docs.dapr.io/getting-started/install-dapr-cli/)
 - [Initialize Dapr in your local environment](https://docs.dapr.io/getting-started/install-dapr-selfhost/)
 - [uninstall CLI command reference](https://docs.dapr.io/reference/cli/dapr-uninstall/)
+- Powershell
+  ```shell
+  Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+  ```
