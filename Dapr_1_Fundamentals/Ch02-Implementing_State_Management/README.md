@@ -22,6 +22,8 @@
 
 
 ## CLI 예제
+![](2022-06-05-10-38-46.png)
+
 ### Sidecar만 실행하기 : daprd 프로세스 실행
 ```shell
 dapr run --app-id hello --dapr-http-port 3500
