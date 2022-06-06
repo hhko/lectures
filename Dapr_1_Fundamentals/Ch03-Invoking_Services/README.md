@@ -2,10 +2,13 @@
 
 ## 목차
 - 목표
-- ...
+
 
 ## 목표
-- ...
+- Services 호출을 통해 Sidecar Architecture 장점 이해하기
+- Services 호출을 위한 DNS 이해하기
+  - Kubernetes DNS
+  - mDNS(Multicast DNS)
 
 ### 주요 흐름
 ![](2022-06-05-11-00-09.png)
@@ -36,3 +39,4 @@ http://localhost:3500/v1.0/invoke/catalog/method/event/12345
 http://localhost:3500/event/12345
 dapr-app-id: catalog
 ```
+

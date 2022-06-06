@@ -2,14 +2,14 @@
 
 ## 목차
 - 목표
-- CLI 예제
+- Sidecar CLI 예제
   - Sidecar만 실행하기 : daprd 프로세스 실행
   - Sidecar와 통신하기 : 영속성 데이터 생성 및 조회
   - Sidecar의 데이터 확인하기 : Redis 컨테이너 데이터 조회
   - Sidecar의 네트워크 포트 확인하기 : daprd 프로세스의 네트워크 포트
 - dapr run 플래그
 - dapr components 구성
-- Console State 예제
+- DaprCounter Console 예제
 - ASP.NET Core State 예제
 
 
@@ -21,8 +21,8 @@
   - 전역 Sidecar component 정보 : `%USERPROFILE%\.dapr\components\`
 
 
-## CLI 예제
-![](2022-06-05-10-43-24.png)
+## Sidecar CLI 예제
+![](2022-06-06-13-00-30.png)
 
 ### Sidecar만 실행하기 : daprd 프로세스 실행
 ```shell
@@ -59,7 +59,7 @@ keys *
 # Redis 값 확인
 # hello : --app-id hello
 # color : "key": "color"
-hgetall "hello||color"
+hgetall hello||color
 
 # Redis 컨테이너 나오기
 exit
@@ -136,6 +136,95 @@ spec:
   CONTAINER ID  IMAGE  COMMAND                 CREATED      STATUS      PORTS                   NAMES
   91b711910116  redis  "docker-entrypoint.s…"  6 hours ago  Up 6 hours  0.0.0.0:6379->6379/tcp  dapr_redis
   ```
+
+
+## DaprCounter Console 예제
+![](2022-06-06-13-01-00.png)
+- [](https://docs.microsoft.com/en-us/dotnet/architecture/dapr-for-net-developers/getting-started)
+
+### 솔루션 구성
+```shell
+# 솔루션 생성
+dotnet new sln -o DaprCounter
+cd .\DaprCounter\
+
+# 프로젝트 생성
+dotnet new console -o DaprCounter
+dotnet add .\DaprCounter\ package Dapr.Client
+dotnet sln add .\DaprCounter\
+dotnet sln list
+
+# 솔루션 빌드
+dotnet build
+```
+
+```cs
+using Dapr.Client;
+
+const string storeName = "statestore";
+const string key = "counter";
+
+var daprClient = new DaprClientBuilder().Build();
+var counter = await daprClient.GetStateAsync<int>(storeName, key);
+
+while (true)
+{
+    Console.WriteLine($"Counter = {counter++}");
+
+    await daprClient.SaveStateAsync(storeName, key, counter);
+    await Task.Delay(1000);
+}
+```
+
+```shell
+# 실행
+dapr run --app-id DaprCounter -- dotnet run --project .\DaprCounter\
+
+Starting Dapr with id DaprCounter. HTTP Port: 57394. gRPC Port: 57395
+Checking if Dapr sidecar is listening on HTTP port 57394
+...
+== APP == Counter = 0
+== APP == Counter = 1
+== APP == Counter = 2
+== APP == Counter = 3
+== APP == Counter = 4
+== APP == Counter = 5
+== APP == Counter = 6
+== APP == Counter = 7
+== APP == Counter = 8
+
+
+# 실행 : 이전 값부터 Counter을 증가 시킨다
+dapr run --app-id DaprCounter -- dotnet run --project .\DaprCounter\
+
+Starting Dapr with id DaprCounter. HTTP Port: 57584. gRPC Port: 57585
+Checking if Dapr sidecar is listening on HTTP port 57584
+...
+== APP == Counter = 9
+== APP == Counter = 10
+== APP == Counter = 11
+== APP == Counter = 12
+== APP == Counter = 13
+== APP == Counter = 14
+== APP == Counter = 15
+```
+
+```shell
+# Redis 컨테이너 접속
+docker container exec -it dapr_redis redis-cli
+
+# Redis 키 목록 확인
+keys *
+
+# Redis 값 확인
+# DaprCounter : --app-id DaprCounter
+# counter : "key": "counter"
+hgetall DaprCounter||counter
+1) "data"
+2) "16"
+3) "version"
+4) "16"
+```
 
 ## 참고 자료
 - [Detailed information on the Redis state store component](https://docs.dapr.io/reference/components-reference/supported-state-stores/setup-redis/)
