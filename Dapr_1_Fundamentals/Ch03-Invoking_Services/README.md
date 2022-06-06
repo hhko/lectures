@@ -39,4 +39,5 @@ http://localhost:3500/v1.0/invoke/catalog/method/event/12345
 http://localhost:3500/event/12345
 dapr-app-id: catalog
 ```
+- https://laurentkempe.com/2021/03/11/using-service-invocation-from-dapr-dotnet-sdk/
 
