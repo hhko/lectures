@@ -9,7 +9,11 @@
   - Sidecar의 네트워크 포트 확인하기 : daprd 프로세스의 네트워크 포트
 - dapr run 플래그
 - dapr components 구성
-- DaprCounter Console 예제
+- Dapr SDK Console 예제
+  - 솔루션 구성
+  - DaprCounter 예제 코드
+  - DaprCounter 데모
+  - Redis 값 확인
 - ASP.NET Core State 예제
 
 
@@ -138,9 +142,9 @@ spec:
   ```
 
 
-## DaprCounter Console 예제
+## Dapr SDK Console 예제
 ![](2022-06-06-13-01-00.png)
-- [](https://docs.microsoft.com/en-us/dotnet/architecture/dapr-for-net-developers/getting-started)
+- [Get started with Dapr](https://docs.microsoft.com/en-us/dotnet/architecture/dapr-for-net-developers/getting-started)
 
 ### 솔루션 구성
 ```shell
@@ -157,6 +161,9 @@ dotnet sln list
 # 솔루션 빌드
 dotnet build
 ```
+- `Dapr.Client` NuGet 패캐지를 추가한다.
+
+### DaprCounter 예제 코드
 
 ```cs
 using Dapr.Client;
@@ -175,9 +182,13 @@ while (true)
     await Task.Delay(1000);
 }
 ```
+- `DaprClientBuilder` : DaprClient 생성
+- `GetStateAsync` : 상태 값 읽기
+- `SaveStateAsync` : 상태 값 쓰기
 
+### DaprCounter 데모
 ```shell
-# 실행
+# 첫 번째 실행
 dapr run --app-id DaprCounter -- dotnet run --project .\DaprCounter\
 
 Starting Dapr with id DaprCounter. HTTP Port: 57394. gRPC Port: 57395
@@ -194,7 +205,7 @@ Checking if Dapr sidecar is listening on HTTP port 57394
 == APP == Counter = 8
 
 
-# 실행 : 이전 값부터 Counter을 증가 시킨다
+# 두 번째 실행 : 이전 값부터 Counter을 증가 시킨다
 dapr run --app-id DaprCounter -- dotnet run --project .\DaprCounter\
 
 Starting Dapr with id DaprCounter. HTTP Port: 57584. gRPC Port: 57585
@@ -209,6 +220,7 @@ Checking if Dapr sidecar is listening on HTTP port 57584
 == APP == Counter = 15
 ```
 
+### Redis 값 확인
 ```shell
 # Redis 컨테이너 접속
 docker container exec -it dapr_redis redis-cli
@@ -230,6 +242,6 @@ hgetall DaprCounter||counter
 - [Detailed information on the Redis state store component](https://docs.dapr.io/reference/components-reference/supported-state-stores/setup-redis/)
 
 ## TODO
-- [ ] https://hhko.github.io/learned/dapr/helloworld/state/state-csharp/
 - [ ] https://github.com/markheath/globoticket-dapr
+- [ ] statestore.yml 파일의 namespace, scopes 이해하기
 - [ ] PostgreSQL Insert 예제
