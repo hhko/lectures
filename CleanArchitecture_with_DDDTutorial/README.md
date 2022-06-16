@@ -1,0 +1,2 @@
+- [동영상](https://www.youtube.com/watch?v=fhM0V2N1GpY&list=PLzYkqgWkHPKBcDIP5gzLfASkQyTdy0t4k)
+- [소스](https://github.com/amantinband?tab=repositories)
