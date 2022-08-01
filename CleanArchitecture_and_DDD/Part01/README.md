@@ -78,6 +78,8 @@ dotnet run --project .\BuberDinner.Api
   ```
 
 ## 3. Layer 구분 데이터 타입
+![](2022-08-01-23-27-43.png)
+
 - Register API 타입 변환
   ```
   [Presentation Layer]                [Application Layer]
