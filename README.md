@@ -3,6 +3,7 @@
 ## 목록
 - [ ] [Developing NET Core Apps with Docker](./Developing_NET_Core_Apps_with_Docker/)
 - [ ] [Dapr 1 Fundamentals](./Dapr_1_Fundamentals)
+- [ ] [REST API Following CLEAN ARCHITECTURE & DDD Tutorial Using .NET 6](./CleanArchitecture_with_DDDTutorial)
 
 ## 개발 환경
 - [Docker Desktop on Windows](https://docs.docker.com/desktop/windows/install/) : Windows 운영체제를 위한 도커
@@ -21,9 +22,9 @@
   - [YAML](https://docs.docker.com/desktop/windows/install/) : YAML 파일 도우미
   - [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) : HTTP API 호출 도우미
 - Visual Studio Code **편집** 확장 도구
-  - [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) : 편집기에서 오타 표시하기
-  - [Trailing Spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces) : 편집기에서 공백 표시하기
-  - [vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons) : `Explorer`의 폴더 밒 파일 아이콘을 변경하기
-  - [Paste Image](https://marketplace.visualstudio.com/items?itemName=mushan.vscode-paste-image) : 클립보드 이미지을 `Ctrl+Alt+`로 편집기에 자동 추가하기
-  - [Peek Hidden Files](https://marketplace.visualstudio.com/items?itemName=adrianwilczynski.toggle-hidden) : 특정 폴더 및 파일을 `Explorer`에서 숨기기
-  - [Markdown Preview Enhanced](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced) : `Ctrl+K+V` .md 파일일 미래보기
+  - [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) : 오타 표시하기
+  - [Trailing Spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces) : 공백 표시하기
+  - [vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons) : `Explorer` 아이콘 변경하기
+  - [Paste Image](https://marketplace.visualstudio.com/items?itemName=mushan.vscode-paste-image) : `Ctrl+Alt+V` 클립보드 이미지 추가하기
+  - [Peek Hidden Files](https://marketplace.visualstudio.com/items?itemName=adrianwilczynski.toggle-hidden) : `Explorer` 파일 또는 폴더 숨기기
+  - [Markdown Preview Enhanced](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced) : `Ctrl+K+V` .md 파일 미래보기
