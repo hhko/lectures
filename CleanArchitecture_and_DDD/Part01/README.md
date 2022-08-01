@@ -1,10 +1,11 @@
 # Part 1. 솔루션 구성
 
-1. 솔루션 구성
-1. Authentication API 구현
+1. 프로젝트 생성
+1. 프로젝트 참조
+1. Layer 구분 데이터 타입
 1. 의존성 구현
 
-## 솔루션 & 프로젝트 생성
+## 1. 프로젝트 생성
 ```shell
 dotnet new sln -o BuberDinner
 cd BuberDinner
@@ -19,7 +20,7 @@ more BuberDinner.sln
 dotnet sln add(ls -r **\*.csproj)
 ```
 
-## 프로젝트 참조
+## 2. 프로젝트 참조
 ```shell
 dotnet add .\BuberDinner.Api reference .\BuberDinner.Contracts .\BuberDinner.Application .\BuberDinner.Infrastructure
 dotnet add .\BuberDinner.Infrastructure reference .\BuberDinner.Application
@@ -29,7 +30,7 @@ dotnet build
 dotnet run --project .\BuberDinner.Api
 ```
 
-### VSCode 확장 도구
+### 2.1 VSCode 확장 도구
 - REST Client 확장 도구 설치
 - Request > Weather > GetForecast.http
   ```
@@ -41,7 +42,7 @@ dotnet run --project .\BuberDinner.Api
   GET http://localhost:5024/WeatherForecast
   ```
 
-### BuberDinner.Api 프로젝트 수정
+### 2.2 BuberDinner.Api 프로젝트 수정
 - `Program.cs` 파일 수정
   ```cs
   var builder = WebApplication.CreateBuilder(args);
@@ -76,26 +77,20 @@ dotnet run --project .\BuberDinner.Api
   </ItemGroup>
   ```
 
-## Layer 구분 데이터 타입
-- Presentation Layer
-  - Authentication
-    - RegisterRequest
-    - LoginRequest
-    - AuthenticationResponse
-- Application Layer
-  - Services\Authentication
-    - AuthenticationResult
+## 3. Layer 구분 데이터 타입
 - Register API 타입 변환
   ```
-  RegisterRequest         -(입력)-> string, string, ....
-  AuthenticationResponse  <-(출력)- AuthenticationResult
+  [Presentation Layer]                [Application Layer]
+  RegisterRequest         -(입력)->   string, string, ....
+  AuthenticationResponse  <-(출력)-   AuthenticationResult
   ```
 - Login API 타입 변환
   ```
-  LoginRequest            -(입력)-> string, string, ....
-  AuthenticationResponse  <-(출력)- AuthenticationResult
+  [Presentation Layer]                [Application Layer]
+  LoginRequest            -(입력)->   string, string, ....
+  AuthenticationResponse  <-(출력)-   AuthenticationResult
   ```
 
-## 의존성 패키지
+## 4. 의존성 패키지
 - dotnet add .\BuberDinner.Application package Microsoft.Extensions.DependencyInjection.Abstractions
 - 의존성 확장 메서드 구현
