@@ -75,3 +75,27 @@ dotnet run --project .\BuberDinner.Api
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
   ```
+
+## Layer 구분 데이터 타입
+- Presentation Layer
+  - Authentication
+    - RegisterRequest
+    - LoginRequest
+    - AuthenticationResponse
+- Application Layer
+  - Services\Authentication
+    - AuthenticationResult
+- Register API 타입 변환
+  ```
+  RegisterRequest         -(입력)-> string, string, ....
+  AuthenticationResponse  <-(출력)- AuthenticationResult
+  ```
+- Login API 타입 변환
+  ```
+  LoginRequest            -(입력)-> string, string, ....
+  AuthenticationResponse  <-(출력)- AuthenticationResult
+  ```
+
+## 의존성 패키지
+- dotnet add .\BuberDinner.Application package Microsoft.Extensions.DependencyInjection.Abstractions
+- 의존성 확장 메서드 구현
