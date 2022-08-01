@@ -3,7 +3,7 @@
 ## 목록
 - [ ] [Developing NET Core Apps with Docker](./Developing_NET_Core_Apps_with_Docker/)
 - [ ] [Dapr 1 Fundamentals](./Dapr_1_Fundamentals)
-- [ ] [REST API Following CLEAN ARCHITECTURE & DDD Tutorial Using .NET 6](./CleanArchitecture_with_DDDTutorial)
+- [ ] [REST API Following CLEAN ARCHITECTURE & DDD Tutorial Using .NET 6](./CleanArchitecture_and_DDD)
 
 ## 개발 환경
 - [Docker Desktop on Windows](https://docs.docker.com/desktop/windows/install/) : Windows 운영체제를 위한 도커
