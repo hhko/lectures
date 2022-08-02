@@ -10,13 +10,13 @@
 - Application Layer
   - 인터페이스 정의 : `IJwtTokenGenerator`
   - 인터페이스 사용 : `_jwtTokenGenerator.GenerateToken`
-- Presentation Layer
+- Presentation Layer : Infrastructure
   - 인터페이스 구현 : `JwtTokenGenerator`
 ### 1.2 시간 인터페이스
 - Application Layer
   - 인터페이스 정의 : `IDateTimeProvider`
   - 인터페이스 사용 : `_dateTimeProvider.UtcNow. ...`
-- Presentation Layer
+- Presentation Layer : Infrastructure
   - 인터페이스 구현 : `DateTimeProvider
 
 ## 2. JWT 구현
