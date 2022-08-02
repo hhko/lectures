@@ -17,7 +17,7 @@
   - 인터페이스 정의 : `IDateTimeProvider`
   - 인터페이스 사용 : `_dateTimeProvider.UtcNow. ...`
 - Presentation Layer : Infrastructure
-  - 인터페이스 구현 : `DateTimeProvider
+  - 인터페이스 구현 : `DateTimeProvider`
 
 ## 2. JWT 구현
 dotnet add .\BuberDinner.Infrastructure\ package System.IdentityModel.Tokens.Jwt
