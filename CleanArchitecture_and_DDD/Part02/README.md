@@ -5,12 +5,19 @@
 1. `dotnet user-secrets`
 1. Sneak-Peeking(몰래 엿보기) 디버깅
 
-## 1. 의존성
+## 1. 의존성 역전
+### 1.1 인증서 인터페이스
 - Application Layer
-  - 인터페이스 정의 : `IJwtTokenGenerator.cs`
+  - 인터페이스 정의 : `IJwtTokenGenerator`
   - 인터페이스 사용 : `_jwtTokenGenerator.GenerateToken`
 - Presentation Layer
   - 인터페이스 구현 : `JwtTokenGenerator`
+### 1.2 시간 인터페이스
+- Application Layer
+  - 인터페이스 정의 : `IDateTimeProvider`
+  - 인터페이스 사용 : `_dateTimeProvider.UtcNow. ...`
+- Presentation Layer
+  - 인터페이스 구현 : `DateTimeProvider
 
 ## 2. JWT 구현
 dotnet add .\BuberDinner.Infrastructure\ package System.IdentityModel.Tokens.Jwt
